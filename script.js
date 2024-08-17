@@ -38,7 +38,7 @@ const getDate = (date) => {
 
 //  API CALL
 async function getWeather(city) {
-  const API = `http://api.openweathermap.org/data/2.5/weather?q=${city}&APPID=c146e9ba863a795712e4f497d0baac65`;
+  const API = `https://api.openweathermap.org/data/2.5/weather?q=${city}&APPID=c146e9ba863a795712e4f497d0baac65`;
 
   try {
     const response = await fetch(API);
@@ -68,12 +68,10 @@ window.addEventListener('load', () => {
   getWeather('kolkata');
 });
 // Search functionality
-searchField.addEventListener("submit", (evt) => {
+searchField.addEventListener('submit', (evt) => {
   evt.preventDefault();
-  alert("hahi");
   let cityName = document.querySelector('.city_name').value;
-//   console.log(cityName.valeue);
+  //   console.log(cityName.valeue);
 
-  
   getWeather(cityName);
 });
